@@ -3,6 +3,14 @@ import { Document } from "mongoose";
 
 export type FinanceDocument = Finance & Document
 
+export class FinanceType {
+    public tanggal: string;
+    public jumlah:  number;
+    public idKategori: number;
+    public keterangan: string;
+    public jenis: string;
+}
+
 @Schema()
 export class Finance {
     @Prop()
@@ -19,8 +27,6 @@ export class Finance {
 
     @Prop()
     jenis: string
-
-
 }
 
 export const FinanceSchema = SchemaFactory.createForClass(Finance)

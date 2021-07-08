@@ -12,4 +12,9 @@ export class FinanceService {
     async all(){
         return this.FinanceModel.find().exec()
     }
+
+    async add(finance: Finance): Promise<Finance> {
+        const createdFinance = new this.FinanceModel(finance);
+        return createdFinance.save();
+    }
 }
