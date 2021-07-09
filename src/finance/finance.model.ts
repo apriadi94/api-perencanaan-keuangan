@@ -4,11 +4,11 @@ import { Document } from "mongoose";
 export type FinanceDocument = Finance & Document
 
 export class FinanceType {
-    public tanggal: string;
-    public jumlah:  number;
-    public idKategori: number;
-    public keterangan: string;
-    public jenis: string;
+    readonly tanggal: string;
+    readonly jumlah:  number;
+    readonly idKategori: number;
+    readonly keterangan: string;
+    readonly jenis: string;
 }
 
 @Schema()
