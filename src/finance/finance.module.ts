@@ -6,9 +6,9 @@ import { Finance, FinanceSchema } from './finance.model';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: Finance.name, schema: FinanceSchema }])
+    MongooseModule.forFeature([{ name: Finance.name, schema: FinanceSchema }]),
   ],
   providers: [FinanceService],
-  controllers: [FinanceController]
+  controllers: [FinanceController],
 })
 export class FinanceModule {}
