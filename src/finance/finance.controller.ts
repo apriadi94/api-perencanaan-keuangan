@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Param } from '@nestjs/common';
 import { Finance } from './finance.model';
 import { FinanceService } from './finance.service';
 
@@ -10,6 +10,11 @@ export class FinanceController {
     async getAllData(){
         const allDataFinance = await this.financeService.all()
         return allDataFinance
+    }
+
+    @Get(':id')
+    async getDataById(@Param('id') id: string){
+        return this.financeService.getById(id)
     }
 
     @Post()

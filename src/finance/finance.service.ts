@@ -90,6 +90,11 @@ export class FinanceService {
         })
     }
 
+    async getById(idFinance){
+        const data = await this.FinanceModel.find({ _id: idFinance}).exec()
+        return data
+    }
+
     async add(finance: Finance): Promise<Finance> {
         const createdFinance = new this.FinanceModel(finance);
         return createdFinance.save();
