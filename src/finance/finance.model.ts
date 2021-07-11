@@ -3,14 +3,6 @@ import { Document } from "mongoose";
 
 export type FinanceDocument = Finance & Document
 
-export class FinanceType {
-    readonly tanggal: string;
-    readonly jumlah:  number;
-    readonly idKategori: number;
-    readonly keterangan: string;
-    readonly jenis: string;
-}
-
 @Schema()
 export class Finance {
     @Prop()
